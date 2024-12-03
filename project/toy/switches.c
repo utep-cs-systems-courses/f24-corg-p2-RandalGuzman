@@ -25,8 +25,7 @@ switch_init(){
   switch_update_interrupt_sense();
 }
 
-void
-switch_interrupt_handler(){
+void switch_interrupt_handler(){
   char p2val = switch_update_interrupt_sense();
 
   switch1_state = (p2val & SW1) ? 0 : 1; //tells which button of the 4 were pressed

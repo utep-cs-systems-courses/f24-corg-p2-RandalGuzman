@@ -4,6 +4,7 @@
 #include "switches.h"
 #include "buzzer.h"
 
+
 char toggle_red(){ //toggle methods for the state machine, alwayys toggle
   static char state = 0;
 
@@ -42,16 +43,17 @@ void led_state_advance(){
   led_update();
 }
 
+
 void switch_state_advance(){
   switch (switch_state){
   case 1:
-    buzzer_set_period(1300); //buzzer is set to a input when a certain button is pressed
+    play_jingle_bells();
     break;
   case 2:
-    buzzer_set_period(200);
+    buzzer_set_period(2000);
     break;
   case 3:
-    buzzer_set_period(700);
+    buzzer_set_period(1000);
     break;
   case 4:
     buzzer_off();

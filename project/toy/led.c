@@ -22,7 +22,7 @@ void led_update(){
   if (led_changed && switch_state == 1){
     ledFlags = greenVal[green_on] | redVal[red_on]; //first state for led state machine
     
-    P1OUT &= (0xff^LEDS) | ledFlags;
+    P1OUT ^= (LEDS) | ledFlags;
     P1OUT |= ledFlags;
     led_changed = 0;
   }

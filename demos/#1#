@@ -1,0 +1,160 @@
+student@systems-vm:~> cd cory
+student@systems-vm:~/cory> cd f24-corg-p2-RandalGuzman
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman> ls
+demos  project  README.md
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman> cd demos
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos> ls
+10-switch-full-modular  2-led-iflash     4-led-blink-pattern       8-switch              Makefile
+11-buzzer               2-led-interrupt  5-led-fn-modular          9-switch-flash-combo  README.md
+1-led                   3-led-blink      6-led-assy                h                     timerLib
+1-led-green-instead     3-led-toggle     7-led-blink-file-modular  lib
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos> cd 11-buzzer/
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> make load
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include -o buzzer.elf buzzer.o buzzerMain.o ../lib/libTimer.a
+msp430loader.sh  buzzer.elf
+check 
+Detected msp430 dev kit
+/opt/ti/uniflash/dslite.sh --config /opt/ti/uniflash/MSP430G2553.ccxml -f  buzzer.elf
+Executing the following command:
+> /opt/ti/uniflash_5.1.0/deskdb/content/TICloudAgent/linux/ccs_base/DebugServer/bin/DSLite flash --config /opt/ti/uniflash/MSP430G2553.ccxml -f buzzer.elf
+
+For more details and examples, please refer to the UniFlash Quick Start guide.
+
+info: MSP430:  Flash/FRAM usage is 414 bytes. RAM usage is 0 bytes.
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> ls
+buzzer.c  buzzer.elf  buzzer.h  buzzerMain.c  buzzerMain.o  buzzer.o  Makefile  README.md
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> ..
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos> ls
+10-switch-full-modular  2-led-iflash     4-led-blink-pattern       8-switch              Makefile
+11-buzzer               2-led-interrupt  5-led-fn-modular          9-switch-flash-combo  README.md
+1-led                   3-led-blink      6-led-assy                h                     timerLib
+1-led-green-instead     3-led-toggle     7-led-blink-file-modular  lib
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos> cd 1-led
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/1-led> make load
+msp430loader.sh led.elf
+check 
+Detected msp430 dev kit
+/opt/ti/uniflash/dslite.sh --config /opt/ti/uniflash/MSP430G2553.ccxml -f  led.elf
+Executing the following command:
+> /opt/ti/uniflash_5.1.0/deskdb/content/TICloudAgent/linux/ccs_base/DebugServer/bin/DSLite flash --config /opt/ti/uniflash/MSP430G2553.ccxml -f led.elf
+
+For more details and examples, please refer to the UniFlash Quick Start guide.
+
+info: MSP430:  Flash/FRAM usage is 252 bytes. RAM usage is 0 bytes.
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/1-led> ..
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos> ls
+10-switch-full-modular  2-led-iflash     4-led-blink-pattern       8-switch              Makefile
+11-buzzer               2-led-interrupt  5-led-fn-modular          9-switch-flash-combo  README.md
+1-led                   3-led-blink      6-led-assy                h                     timerLib
+1-led-green-instead     3-led-toggle     7-led-blink-file-modular  lib
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos> cd 11-buzzer/
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> ls
+buzzer.c  buzzer.elf  buzzer.h  buzzerMain.c  buzzerMain.o  buzzer.o  Makefile  README.md
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> make load
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include   -c -o buzzerMain.o buzzerMain.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include -o buzzer.elf buzzer.o buzzerMain.o ../lib/libTimer.a
+msp430loader.sh  buzzer.elf
+check 
+Detected msp430 dev kit
+/opt/ti/uniflash/dslite.sh --config /opt/ti/uniflash/MSP430G2553.ccxml -f  buzzer.elf
+Executing the following command:
+> /opt/ti/uniflash_5.1.0/deskdb/content/TICloudAgent/linux/ccs_base/DebugServer/bin/DSLite flash --config /opt/ti/uniflash/MSP430G2553.ccxml -f buzzer.elf
+
+For more details and examples, please refer to the UniFlash Quick Start guide.
+
+info: MSP430:  Flash/FRAM usage is 414 bytes. RAM usage is 0 bytes.
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> make clean
+rm -f *.o *.elf
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> make load
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include   -c -o buzzer.o buzzer.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include   -c -o buzzerMain.o buzzerMain.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include -o buzzer.elf buzzer.o buzzerMain.o ../lib/libTimer.a
+msp430loader.sh  buzzer.elf
+check 
+Detected msp430 dev kit
+/opt/ti/uniflash/dslite.sh --config /opt/ti/uniflash/MSP430G2553.ccxml -f  buzzer.elf
+Executing the following command:
+> /opt/ti/uniflash_5.1.0/deskdb/content/TICloudAgent/linux/ccs_base/DebugServer/bin/DSLite flash --config /opt/ti/uniflash/MSP430G2553.ccxml -f buzzer.elf
+
+For more details and examples, please refer to the UniFlash Quick Start guide.
+
+info: MSP430:  Flash/FRAM usage is 414 bytes. RAM usage is 0 bytes.
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> make clean
+rm -f *.o *.elf
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> make load
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include   -c -o buzzer.o buzzer.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include   -c -o buzzerMain.o buzzerMain.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include -o buzzer.elf buzzer.o buzzerMain.o ../lib/libTimer.a
+msp430loader.sh  buzzer.elf
+check 
+Detected msp430 dev kit
+/opt/ti/uniflash/dslite.sh --config /opt/ti/uniflash/MSP430G2553.ccxml -f  buzzer.elf
+Executing the following command:
+> /opt/ti/uniflash_5.1.0/deskdb/content/TICloudAgent/linux/ccs_base/DebugServer/bin/DSLite flash --config /opt/ti/uniflash/MSP430G2553.ccxml -f buzzer.elf
+
+For more details and examples, please refer to the UniFlash Quick Start guide.
+
+info: MSP430:  Flash/FRAM usage is 414 bytes. RAM usage is 0 bytes.
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> make clean
+rm -f *.o *.elf
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> make load
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include   -c -o buzzer.o buzzer.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include   -c -o buzzerMain.o buzzerMain.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include -o buzzer.elf buzzer.o buzzerMain.o ../lib/libTimer.a
+msp430loader.sh  buzzer.elf
+check 
+Detected msp430 dev kit
+/opt/ti/uniflash/dslite.sh --config /opt/ti/uniflash/MSP430G2553.ccxml -f  buzzer.elf
+Executing the following command:
+> /opt/ti/uniflash_5.1.0/deskdb/content/TICloudAgent/linux/ccs_base/DebugServer/bin/DSLite flash --config /opt/ti/uniflash/MSP430G2553.ccxml -f buzzer.elf
+
+For more details and examples, please refer to the UniFlash Quick Start guide.
+
+info: MSP430:  Flash/FRAM usage is 414 bytes. RAM usage is 0 bytes.
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> make load
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include   -c -o buzzerMain.o buzzerMain.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include -o buzzer.elf buzzer.o buzzerMain.o ../lib/libTimer.a
+msp430loader.sh  buzzer.elf
+check 
+Detected msp430 dev kit
+/opt/ti/uniflash/dslite.sh --config /opt/ti/uniflash/MSP430G2553.ccxml -f  buzzer.elf
+Executing the following command:
+> /opt/ti/uniflash_5.1.0/deskdb/content/TICloudAgent/linux/ccs_base/DebugServer/bin/DSLite flash --config /opt/ti/uniflash/MSP430G2553.ccxml -f buzzer.elf
+
+For more details and examples, please refer to the UniFlash Quick Start guide.
+
+info: MSP430:  Flash/FRAM usage is 414 bytes. RAM usage is 0 bytes.
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> make load
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include   -c -o buzzerMain.o buzzerMain.c
+buzzerMain.c: In function 'main':
+buzzerMain.c:9:23: warning: overflow in conversion from 'long int' to 'short int' changes value from '500000' to '-24288' [-Woverflow]
+     buzzer_set_period(500000); /* start buzzing!!! 2MHz/1000 = 2kHz*/
+                       ^~~~~~
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include -o buzzer.elf buzzer.o buzzerMain.o ../lib/libTimer.a
+msp430loader.sh  buzzer.elf
+check 
+Detected msp430 dev kit
+/opt/ti/uniflash/dslite.sh --config /opt/ti/uniflash/MSP430G2553.ccxml -f  buzzer.elf
+Executing the following command:
+> /opt/ti/uniflash_5.1.0/deskdb/content/TICloudAgent/linux/ccs_base/DebugServer/bin/DSLite flash --config /opt/ti/uniflash/MSP430G2553.ccxml -f buzzer.elf
+
+For more details and examples, please refer to the UniFlash Quick Start guide.
+
+info: MSP430:  Flash/FRAM usage is 414 bytes. RAM usage is 0 bytes.
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> ls
+buzzer.c  buzzer.elf  buzzer.h  buzzerMain.c  buzzerMain.o  buzzer.o  Makefile  README.md
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> make load
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include   -c -o buzzer.o buzzer.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include   -c -o buzzerMain.o buzzerMain.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../h -L/opt/ti/msp430_gcc/include -o buzzer.elf buzzer.o buzzerMain.o ../lib/libTimer.a
+msp430loader.sh  buzzer.elf
+check 
+Detected msp430 dev kit
+/opt/ti/uniflash/dslite.sh --config /opt/ti/uniflash/MSP430G2553.ccxml -f  buzzer.elf
+Executing the following command:
+> /opt/ti/uniflash_5.1.0/deskdb/content/TICloudAgent/linux/ccs_base/DebugServer/bin/DSLite flash --config /opt/ti/uniflash/MSP430G2553.ccxml -f buzzer.elf
+
+For more details and examples, please refer to the UniFlash Quick Start guide.
+
+info: MSP430:  Flash/FRAM usage is 412 bytes. RAM usage is 0 bytes.
+student@systems-vm:~/cory/f24-corg-p2-RandalGuzman/demos/11-buzzer> 

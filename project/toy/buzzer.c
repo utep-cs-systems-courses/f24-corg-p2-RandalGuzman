@@ -2,6 +2,13 @@
 #include "libTimer.h"
 #include "buzzer.h"
 
+#define NOTE_C5 523
+#define NOTE_D5 587
+#define NOTE_E5 659
+#define NOTE_F5 698
+#define NOTE_G5 784
+
+
 void buzzer_init(){
   timerAUpmode();
   P2SEL2 &= ~(BIT6 | BIT7);
@@ -20,3 +27,12 @@ void buzzer_off(){
   CCR1 = 0;
 }
   
+void play_jingle_bells() {
+  int melody[] = { NOTE_E5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_G5, 0, NOTE_C5, 0, NOTE_D5, 0, NOTE_E5, 0, NOTE_F5, 0, NOTE_F5, 0, NOTE_F5, 0, NOTE_F5, 0, NOTE_F5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_D5, 0, NOTE_D5, 0, NOTE_E5, 0, NOTE_D5, 0, NOTE_G5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_G5, 0, NOTE_C5, 0, NOTE_D5, 0, NOTE_E5, 0, NOTE_F5, 0, NOTE_F5, 0, NOTE_F5, 0, NOTE_F5, 0, NOTE_F5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_E5, 0, NOTE_G5, 0, NOTE_G5, 0, NOTE_F5, 0, NOTE_D5, 0, NOTE_C5 };
+
+  for (int i = 0; i < sizeof(melody)/sizeof(*melody); i++) {
+    buzzer_set_period(melody[i]);
+    __delay_cycles(1200);
+  }
+}
+ 
