@@ -17,12 +17,20 @@ void led_init(){
 }
 
 void led_update(){
-  char ledFlags;
+  char ledFlags = 0;
 
   if (led_changed && switch_state == 1){
+    if (red_on){
+      green_on = 1;
+      red_on = 0;
+    } else {
+      green_on = 0;
+      red_on =1;
+    }
+    
     ledFlags = greenVal[green_on] | redVal[red_on]; //first state for led state machine
     
-    P1OUT ^= (LEDS) | ledFlags;
+    P1OUT &= ~(LEDS);
     P1OUT |= ledFlags;
     led_changed = 0;
   }

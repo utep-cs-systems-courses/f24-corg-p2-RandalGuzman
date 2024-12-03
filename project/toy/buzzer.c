@@ -2,12 +2,11 @@
 #include "libTimer.h"
 #include "buzzer.h"
 
-#define NOTE_C5 523
-#define NOTE_D5 587
-#define NOTE_E5 659
-#define NOTE_F5 698
-#define NOTE_G5 784
-
+#define NOTE_C5 52 //523 
+#define NOTE_D5 587 //587
+#define NOTE_E5 65 //659
+#define NOTE_F5 698 //698
+#define NOTE_G5 78 //784
 
 void buzzer_init(){
   timerAUpmode();
@@ -32,7 +31,7 @@ void play_jingle_bells() {
 
   for (int i = 0; i < sizeof(melody)/sizeof(*melody); i++) {
     buzzer_set_period(melody[i]);
-    __delay_cycles(1200);
+    __delay_cycles(100);
   }
 }
  
